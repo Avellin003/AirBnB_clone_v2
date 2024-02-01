@@ -12,7 +12,7 @@ sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 sudo chown -R ubuntu /data/
 sudo chgrp -R ubuntu /data/
 
-print %s "server {
+printf %s "server {
 	listen 80 default_server;
 	listen [::] 80 default_server;
 	add_header X-serverd-By $HOSTNAME;
