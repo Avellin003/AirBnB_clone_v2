@@ -24,12 +24,14 @@ def display_c(text):
     text = unquote(text).replace('_', ' ')
     return 'C {}'.format(text)
 
+
 @app.route("/python", strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def display_python(text='is cool'):
     """Replace underscores with spaces"""
     text = unquote(text).replace('_', ' ')
     return 'Python {}'.format(text)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
