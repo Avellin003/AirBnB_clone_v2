@@ -42,10 +42,7 @@ def display_number(n):
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def display_number_template(n):
     """Checks whether it is an int"""
-    if isinstance(n, int):
-        return render_template('number_template.html', number=n)
-    else:
-        return 'Not a valid number'
+        return render_template('5-number_template.html', number=n)
 
 
 if __name__ == '__main__':
