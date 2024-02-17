@@ -27,8 +27,8 @@ def display_c(text):
     return 'C {}'.format(text)
 
 
-@app.route('/python/<text>', strict_slashes=False)
 @app.route('/python', strict_slashes=False)
+@app.route('/python/<text>', strict_slashes=False)
 def display_python(text='is cool'):
     """Replace underscores with spaces"""
     text = text.replace('_', ' ')
@@ -50,7 +50,7 @@ def display_number_template(n):
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
 def display_number_odd_or_even(n):
     """Displays whether odd or even"""
-    return render_template('number_odd_or_even.html', n=n)
+    return render_template('6-number_odd_or_even.html', n=n)
 
 
 if __name__ == '__main__':
