@@ -26,7 +26,7 @@ def display_c(text):
 
 
 @app.route('/python/<text>', strict_slashes=False)
-@app.route('/python/', strict_slashes=False)
+@app.route('/python', strict_slashes=False)
 def display_python(text='is cool'):
     """Replace underscores with spaces"""
     text = unquote(text).replace('_', ' ')
@@ -42,7 +42,7 @@ def display_number(n):
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def display_number_template(n):
     """Checks whether it is an int"""
-    return render_template('5-number.html', number=n)
+    return render_template('5-number.html', n=n)
 
 
 if __name__ == '__main__':
