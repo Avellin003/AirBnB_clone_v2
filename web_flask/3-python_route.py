@@ -24,7 +24,7 @@ def display_c(text):
     text = unquote(text).replace('_', ' ')
     return 'C {}'.format(text)
 
-
+@app.route("/python", strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def display_python(text='is cool'):
     """Replace underscores with spaces"""
