@@ -21,7 +21,7 @@ def display_hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def display_c(text):
     """Replace underscores with spaces"""
-    text = unquote(text).replace('_', ' ')
+    text = text.replace('_', ' ')
     return 'C {}'.format(text)
 
 
