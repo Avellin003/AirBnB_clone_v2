@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+"""Starts the web app"""
+from flask import Flask
+from urllib.parse import unquote
+
+
+app = Flask(__name__)
+
+
+@app.route('/', strict_slashes=False)
+def hello_hbnb():
+    """Displays the hello hbnb"""
+    return 'Hello HBNB!'
+
+
+@app.route('/hbnb', strict_slashes=False)
+def display_hbnb():
+    """Displays the 'HBNB'"""
+    return 'HBNB'
+
+
+@app.route('/c/<text>', strict_slashes=False)
+def display_c(text):
+    """Replaces the underscores with spaces"""
+    text = unquote(text).replace('_', ' ')
+    return 'C {}'.format(text)
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
